@@ -1,0 +1,79 @@
+import random
+
+print("Welcome to the Alan Turing Quiz!")
+name = input("What is your name? ")
+score = 0
+# If two people have the same score then there is an error, so by adding a very small random float they can be placed without an error, cons: someone with the same score as you, if lucky, may get a higher pplace in the leaderboard
+x = random_float = random.uniform(0.01, 0.001)
+
+score = score + x
+
+# Question 1
+print("Question 1: Alan Turing is famously known for his contributions in which field?")
+print("a) Computer Science")
+print("b) Biology")
+print("c) Architecture")
+answer = input("Your answer (a, b, or c): ")
+#.lower makes the answer lowercase if they entered it in upper
+if answer.lower() == "a":
+    score += 1
+    
+# Question 2
+print("\nQuestion 2: In which war did Alan Turing play a crucial role?")
+print("a) World War I")
+print("b) World War II")
+print("c) Cold War")
+answer = input("Your answer (a, b, or c): ")
+if answer.lower() == "b":
+    score += 1
+# Question 3
+print("\nQuestion 3: What was the name of Alan Turing's famous paper where he introduced the concept of Turing machines?")
+print("a) On Computable Numbers")
+print("b) The Imitation Game")
+print("c) Computing Machinery and Intelligence")
+answer = input("Your answer (a, b, or c): ")
+if answer.lower() == "a":
+    score += 1
+# Question 4
+print("\nQuestion 4: At which institution did Alan Turing work during World War II to decrypt the German Enigma codes?")
+print("a) Bletchley Park")
+print("b) MIT")
+print("c) Harvard University")
+answer = input("Your answer (a, b, or c): ")
+if answer.lower() == "a":
+    score += 1
+
+# Question 5
+print("\nQuestion 5: What was the outcome of Alan Turing's work on the Enigma machine?")
+print("a) Successful decryption of all German messages")
+print("b) Partial decryption of some German messages")
+print("c) Unsuccessful decryption")
+answer = input("Your answer (a, b, or c): ")
+if answer.lower() == "a":
+    score += 1
+
+
+# opens the file
+with open("scores.txt", "r") as file:
+ # reads seperate lines i believe...
+  scores = [line.strip().split() for line in file.readlines()]
+# appends the new score obviouslty...
+scores.append([name, score])
+# sorts from top to bototm
+scores.sort(key=lambda x: int(x[1]), reverse=True)
+# updates the new score with the including score.. otherwise it ignores current score
+with open("scores.txt", "w") as file:
+  for entry in scores:
+    file.write(' '.join(entry) + '\n')
+# gets the top ten scores INCLUDING THE NEW ONESSSS
+top_ten_scores = scores[:10]
+#  prints them 
+top_ten_output = '\n'.join([f"{i}. {name}: {score}" for i, (name, score) in 
+# Enumerate - to list one by one                            
+enumerate(top_ten_scores, start=1)])
+print(top_ten_output)
+
+
+
+
+
