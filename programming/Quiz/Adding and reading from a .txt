@@ -1,0 +1,29 @@
+print("Welcome to the Alan Turing Quiz!")
+name = input("What is your name? ")
+score = 0
+# If two people have the same score then there is an error, so by adding a very small random float they can be placed without an error, cons: someone with the same score as you, if lucky, may get a higher pplace in the leaderboard
+x = random_float = random.uniform(0.01, 0.001)
+
+score = score + x
+
+# opens the file
+with open("scores.txt", "r") as file:
+  # reads seperate lines i believe...
+  scores = [line.strip().split() for line in file.readlines()]
+# appends the new score obviouslty...
+scores.append([name, score])
+# sorts from top to bototm
+scores.sort(key=lambda x: int(x[1]), reverse=True)
+# updates the new score with the including score.. otherwise it ignores current score
+with open("scores.txt", "w") as file:
+  for entry in scores:
+    file.write(' '.join(entry) + '\n')
+# gets the top ten scores INCLUDING THE NEW ONESSSS
+top_ten_scores = scores[:10]
+#  prints them
+top_ten_output = '\n'.join([
+    f"{i}. {name}: {score}" for i, (name, score) in
+    # Enumerate - to list one by one
+    enumerate(top_ten_scores, start=1)
+])
+print(top_ten_output)
