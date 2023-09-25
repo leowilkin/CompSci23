@@ -34,6 +34,8 @@ WHILE repeat <- True
 OUTPUT total
 ```
 #### 2.
+Python:
+<br>
 ```{python}
 number = 0
 total = 0
@@ -49,3 +51,4 @@ while repeat == True:
     total = float(temp_total) / float(tick)
 print(total)
 ```
+### Task 3
