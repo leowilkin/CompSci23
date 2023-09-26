@@ -27,4 +27,15 @@ WHILE star < 10
 ENDWHILE
 ```
 ## 2.
-  
+```
+OUTPUT "Please enter number of temperatures (between 5 & 20): "
+validNumber <- False
+WHILE NOT validNumber
+  numTemp <- STRING_TO_INT(USERINPUT)
+  IF numTemp >= t AND numTemp <= 20 THEN
+    validNumber <- True
+  ELSE
+    OUTPUT "Please enter a number between 5 & 20: "
+  ENDIF
+ENDWHILE
+```
