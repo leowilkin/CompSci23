@@ -1,7 +1,7 @@
 # Worksheet 3 - Iteration
 
 ### Task 2
-#### 1.
+1.
 Python:
 <br>
 ```{python}
@@ -33,7 +33,7 @@ WHILE repeat <- True
 			Total <- Total + 1
 OUTPUT total
 ```
-#### 2.
+2.
 Python:
 <br>
 ```{python}
@@ -52,14 +52,14 @@ while repeat == True:
 print(total)
 ```
 ### Task 3
-#### a.
+a.
 ```
 pendown()
 FOR i <- 1 TO 4
 forward(20)
 right(90)
 ```
-#### b.
+b.
 ```
 pendown()
 FOR i <- 1 TO 3
@@ -74,7 +74,7 @@ FOR i <- 1 TO 3
 	forward(30)
 ENDFOR
 ```
-#### c.
+c.
 ```
 pendown()
 distance <- 10
@@ -84,3 +84,53 @@ FOR i <- 1 TO 7
 	forward(distance)
 	distance = distance + distance
 ENDFOR
+```
+### Task 3
+a.
+```
+pendown()
+FOR i <- 1 TO 4
+	forward(20)
+	right(90)
+ENDFOR
+```
+b.
+```
+pendown()
+FOR i <- 1 TO 3
+	FOR j <- 1 TO 4
+		forward(20)
+		right(90)
+	ENDFOR
+	penup()
+	right(180)
+	forward(30)
+	left(90)
+	pendown()
+ENDFOR
+```
+c.
+```
+pendown()
+distance <- 10
+FOR i <- 1 TO 7
+	FOR j <- 1 TO 2
+		forward(distance)
+		right(90)
+	ENDFOR
+	distance <- distance + 10
+ENDFOR
+```
+### Task 4
+```
+REPEAT
+	OUTPUT "Enter your email address: "
+	email <- USERINPUT
+	containsAtSymbol <- False
+	FOR i <- TO LEN(email)
+			IF email[0] = "@" THEN
+				containsAtSymbol <- True
+			ENDIF
+	ENDFOR
+UNTIL containsAtSymbol
+```
