@@ -52,3 +52,35 @@ while repeat == True:
 print(total)
 ```
 ### Task 3
+#### a.
+```
+pendown()
+FOR i <- 1 TO 4
+forward(20)
+right(90)
+```
+#### b.
+```
+pendown()
+FOR i <- 1 TO 3
+	FOR j <- 1 TO 4
+		forward(20)
+		right(90)
+	ENDFOR
+	penup()
+	right(90)
+	forward(20)
+	right(90)
+	forward(30)
+ENDFOR
+```
+#### c.
+```
+pendown()
+distance <- 10
+FOR i <- 1 TO 7
+	forward(distance)
+	right(90)
+	forward(distance)
+	distance = distance + distance
+ENDFOR
